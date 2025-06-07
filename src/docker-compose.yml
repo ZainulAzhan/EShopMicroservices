@@ -10,6 +10,9 @@ services:
   distributedcache:
     image: redis
 
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
@@ -31,5 +34,4 @@ services:
 volumes:
   postgres_catalog:
   postgres_basket:
-
-
+  orderdb_data:
